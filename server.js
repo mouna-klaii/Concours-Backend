@@ -13,8 +13,9 @@ connectDB()
 app.use(express.json());
 app.use("/api/contact" , require("./routes/contact"))
 app.use("/api/etudiant" , require("./routes/etudiant"))
+app.use((req,res) =>{res.send("Hello")})
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT ||3010;
 
 app.listen(PORT, error =>{
     error ? console.error(`Fail to connect server , ${error}`)
